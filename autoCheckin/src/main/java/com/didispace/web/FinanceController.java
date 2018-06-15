@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
@@ -94,5 +95,17 @@ public class FinanceController {
 	@ResponseBody
 	public JSONObject addOne(FinanceInfo financeInfo) {
 		return financeInfoService.addOne(financeInfo);
+	}
+	
+	@RequestMapping("/edit")
+	@ResponseBody
+	public JSONObject edit(FinanceInfo financeInfo) {
+		return financeInfoService.edit(financeInfo);
+	}
+	
+	@RequestMapping("/getOne")
+	@ResponseBody
+	public JSONObject getOne(@RequestParam(value="id") Long id) {
+		return financeInfoService.getOne(id);
 	}
 }

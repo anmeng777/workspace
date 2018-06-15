@@ -126,13 +126,6 @@ Page({
       method: 'POST',
       //服务端的回掉  
       success: function (result) {
-        // var data = result.data;
-        // if (data == "YES") {
-        //   wx.redirectTo({
-        //     url: '/pages/finance/index'
-        //   })
-        // }
-        console.log(JSON.stringify(result.data));
         that.setData({
           financeInfo: result.data,
           totalAmt: result.data.totalAmt
@@ -141,18 +134,27 @@ Page({
     })
   },
   onShareAppMessage: function () {
-
     return {
-
       title: '小程序',
-
       desc: '测试',
-
       path: '/pages/index/index',
-
       imageUrl: 'http://img.hb.aicdn.com/d166ea58f81676521ab0a9c08bb229567c20ef22aa9a-tN6KPk_fw658'
-
     }
-
+  },
+  open: function (Object) {
+    wx.showActionSheet({
+      itemList: ['修改', '取息', '到期'],
+      success: function (res) {
+        if (res.cancel) {
+          return false;
+        }
+        console.log(res.tapIndex)
+        if (res.tapIndex == 0){
+          wx.navigateTo({
+            url: 'addFinance/addFinance?id=' + Object.currentTarget.id
+          })
+        }
+      }
+    });
   }
 })

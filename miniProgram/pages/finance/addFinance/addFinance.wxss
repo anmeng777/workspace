@@ -2,3 +2,7 @@
 .addOne {
   margin-top:100px;
 }
+.weui-input{
+  width:50%
+}
+

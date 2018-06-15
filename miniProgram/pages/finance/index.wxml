@@ -1,6 +1,6 @@
 <view class="page">
-  <view wx:for="{{financeInfo.data}}" wx:for-item="info">
-    <view class="page__bd">
+  <view wx:for="{{financeInfo.data}}" wx:for-item="info" >
+    <view class="page__bd" id="{{info.id}}" bindtap="open">
       <view class="weui-form-preview">
         <view class="weui-form-preview__hd">
             <view class="weui-form-preview__item">

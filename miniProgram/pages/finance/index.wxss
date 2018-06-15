@@ -5,6 +5,9 @@
 .weui-form-preview{
     margin-bottom: 25rpx;
 }
+.weui-footer{
+  margin: 25rpx 0px 20rpx 0rpx ;
+}
 .weui-footer,.button-sp-area{  
   margin-top: 50px;
   height: 100%;  

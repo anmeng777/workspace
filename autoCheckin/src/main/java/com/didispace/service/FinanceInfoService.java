@@ -70,6 +70,32 @@ public class FinanceInfoService {
 		jsonObject.put("message", "添加成功");
 		return jsonObject;
 	}
+	
+	public JSONObject edit(FinanceInfo financeInfo) {
+		JSONObject jsonObject = new JSONObject();
+		if(financeInfoRepository.findOne(financeInfo.getId())==null){
+			jsonObject.put("code", "301");
+			jsonObject.put("message", "没找到这个记录");
+			return jsonObject;
+		}
+		financeInfoRepository.save(financeInfo);
+		jsonObject.put("code", "201");
+		jsonObject.put("message", "修改成功");
+		return jsonObject;
+	}
+	
+	public JSONObject getOne(Long id) {
+		JSONObject jsonObject = new JSONObject();
+		if(financeInfoRepository.findOne(id)==null){
+			jsonObject.put("code", "301");
+			jsonObject.put("message", "没找到这个记录");
+			return jsonObject;
+		}
+		jsonObject.put("code", "201");
+		jsonObject.put("message", "获取成功");
+		jsonObject.put("data", financeInfoRepository.findOne(id));
+		return jsonObject;
+	}
 
 	public JSONObject login(LoginParam loginParam) {
 		JSONObject jsonObject = new JSONObject();
