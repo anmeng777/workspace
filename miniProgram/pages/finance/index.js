@@ -15,7 +15,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: 'POST',
-      //服务端的回掉  
+      //服务端的回调
       success: function (result) {
         // var data = result.data;
         // if (data == "YES") {
