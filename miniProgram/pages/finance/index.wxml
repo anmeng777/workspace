@@ -1,0 +1,53 @@
+<view class="page">
+  <view wx:for="{{financeInfo.data}}" wx:for-item="info">
+    <view class="page__bd">
+      <view class="weui-form-preview">
+        <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">金额</view>
+                <view class="weui-form-preview__value_in-hd">¥{{info.totalAmt}}</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">利率</view>
+                <view class="weui-form-preview__value">{{info.rate*100}}%</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">期限</view>
+                <view class="weui-form-preview__value">{{info.period}}年</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">开始日期</view>
+                <view class="weui-form-preview__value">{{info.startDate}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">名字</view>
+                <view class="weui-form-preview__value">{{info.user}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">票号</view>
+                <view class="weui-form-preview__value">{{info.ticketNo}}</view>
+            </view>
+        </view>
+        <!-- <view class="weui-form-preview__ft">
+            <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">操作</navigator>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <view class="button-sp-area">
+      <view class="mini-btn2">
+        <button bindtap="thisMonth" class="weui-btn mini-btn" type="primary" size="mini">这个月</button>
+        <button bindtap="nextMonth" class="weui-btn mini-btn" type="default" size="mini">下个月</button>
+        <button bindtap="findAll" class="weui-btn mini-btn" type="warn" size="mini">全部</button>
+      </view>
+  </view>
+    <button bindtap="addOne" class="weui-btn" type="default" plain="true">新建</button>
+  <div class="weui-footer">
+    <p class="weui-footer__links">
+        <a href="javascript:void(0);" class="weui-footer__link footer">总金额: {{totalAmt}}</a>
+        <!-- <a href="javascript:void(0);" class="weui-footer__link">底部链接</a> -->
+    </p>
+  </div>
+</view>
