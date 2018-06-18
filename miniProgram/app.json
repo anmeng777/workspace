@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/finance/index",
     "pages/logs/logs",
-    "pages/finance/addFinance/addFinance"
+    "pages/finance/addFinance/addFinance",
+    "pages/mima/mima",
+    "pages/mimaerror/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

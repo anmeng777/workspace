@@ -24,17 +24,39 @@ Page({
     })
   },
   onShareAppMessage: function () {
-
     return {
-
       title: '小程序',
-
       desc: '测试',
-
       path: '/pages/index/index',
-
       imageUrl: 'http://img.hb.aicdn.com/d166ea58f81676521ab0a9c08bb229567c20ef22aa9a-tN6KPk_fw658'
     }
-
+  },
+  onShow: function(){
+    wx.login({
+      success: function (res) {
+        wx.request({
+          url: "https://16u882035y.51mypc.cn/autoCheckin/miniProgram/getOpenid",
+          data: {
+            code: res.code,
+          },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          method: 'POST',
+          //服务端的回掉  
+          success: function (result) {
+            var data = result.data;
+            if (data == "YES") {
+              wx.navigateTo({
+                url: '/pages/mima/mima'
+              })
+              // wx.redirectTo({
+              //   url: '/pages/finance/index'
+              // })
+            }
+          }
+        })
+      }
+    })
   }
 })

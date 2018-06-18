@@ -21,7 +21,6 @@ App({
       // 调用登录接口
       wx.login({
         success: function (res) {
-          
         //发起网络请求  
           wx.request({
             url: "https://16u882035y.51mypc.cn/autoCheckin/miniProgram/getOpenid",
@@ -36,9 +35,12 @@ App({
             success: function (result) {
               var data = result.data;
               if(data=="YES"){
-                wx.redirectTo({
-                  url: '/pages/finance/index'
-                })
+                  wx.navigateTo({
+                    url: '/pages/mima/mima'
+                  })
+                // wx.redirectTo({
+                //   url: '/pages/finance/index'
+                // })
               }
             }          
           })
