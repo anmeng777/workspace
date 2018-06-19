@@ -1,7 +1,0 @@
-/* pages/mima/mima.wxss */
-.weui-btn,weui-input{
-  width:100%
-}
-.weui-input{
-  margin-top : 90px
-}

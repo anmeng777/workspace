@@ -1,9 +1,0 @@
-<!--pages/mima/mima.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-  </view>
-  <view class="usermotto">
-    <input class="weui-input" type="number" bindchange="mimaInput" placeholder="请输入密码" />
-  </view>
-  <button class="weui-btn" bindtap="mima" type="primary">确认</button>
-</view>
